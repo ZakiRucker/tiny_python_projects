@@ -6,6 +6,7 @@ Purpose: Greet the user"""
 
 import argparse
 
+
 # --------------------------------------------------
 def get_args():
     """parse the arguments"""
@@ -25,6 +26,7 @@ def main():
     args = get_args()
 
     print('Hello, ' + args.name + '!')
+
 
 if __name__ == '__main__':
     main()
