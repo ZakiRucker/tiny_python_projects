@@ -27,9 +27,9 @@ def get_args():
 def get_article(user_input):
     """Determine which article to use"""
 
-    vowels = ['a', 'e', 'i', 'o', 'u']
+#    vowels = ['a', 'e', 'i', 'o', 'u']
 
-    if user_input[0] in vowels:
+    if user_input[0] in 'aeiouAEIOU':
         solution = "an"
     else:
         solution = "a"
@@ -42,12 +42,11 @@ def main():
     """Make a jazz noise here"""
 
     args = get_args()
-    pos_arg = args.word
+    word = args.word
 
-    article = get_article(pos_arg.lower())
+    article = get_article(word)
 
-    print("Ahoy, Captain, " + article + " " + pos_arg +
-          " off the larboard bow!")
+    print("Ahoy, Captain, {} {} off the larboard bow!".format(article, word))
 
 
 # --------------------------------------------------
