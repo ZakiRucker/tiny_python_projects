@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 """
-Author : Zaki Rucker <zakirucker@mac.com>
 Date   : 2021-09-06
 Purpose: learning to work with strings
 """
