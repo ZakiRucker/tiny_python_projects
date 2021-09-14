@@ -12,6 +12,7 @@ tex2pdf*
 .idea
 .vscode
 /venv/
+tiny_python_projects.epub
 02_crowsnest/crowsnest.py
 03_picnic/picnic.py
 04_jump_the_five/jump.py
