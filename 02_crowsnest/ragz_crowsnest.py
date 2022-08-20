@@ -26,7 +26,6 @@ def get_args():
 def get_article(user_input):
     """Determine which article to use"""
 
-#    vowels = ['a', 'e', 'i', 'o', 'u']
 
     if user_input[0] in 'aeiouAEIOU':
         solution = "an"
