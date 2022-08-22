@@ -7,6 +7,8 @@ Purpose: Rock the Casbah
 
 import argparse
 import os
+import string
+import random
 
 
 # --------------------------------------------------
@@ -52,9 +54,17 @@ def main():
     """Make a jazz noise here"""
 
     args = get_args()
+    said = args.text
+    random.seed(args.seed)
+    num_mutations = round(len(said) * args.mutations)
+    alpha = ''.join(sorted(string.ascii_letters + string.punctuation))
+    heard = said
 
-    num_mutations = round(len(args.text) * args.mutations)
-    print('You said: "{}"\nI heard : "{}"'.format(args.text, args.text))
+    for i in random.sample(range(len(said)), num_mutations):
+        new_char = random.choice(alpha.replace(said[i], ''))
+        heard = heard[:i] + new_char + heard[i + 1:]
+
+    print('You said: "{}"\nI heard : "{}"'.format(said, heard))
 
 # --------------------------------------------------
 if __name__ == '__main__':
