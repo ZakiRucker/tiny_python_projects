@@ -32,6 +32,8 @@ def get_args():
 
 # --------------------------------------------------
 def verse(num):
+    """Sing the verse"""
+
     print(f'{num} bottles of beer on the wall,\n'
           f'{num} bottles of beer,\n'
           'Take one down, pass it around,\n'
@@ -40,6 +42,8 @@ def verse(num):
 
 # --------------------------------------------------
 def pu_verse():
+    """Sing the penultimate verse"""
+
     print('2 bottles of beer on the wall,\n'
           '2 bottles of beer,\n'
           'Take one down, pass it around,\n'
@@ -48,6 +52,8 @@ def pu_verse():
 
 # --------------------------------------------------
 def last_verse():
+    """Sing the last verse"""
+
     print('1 bottle of beer on the wall,\n'
           '1 bottle of beer,\n'
           'Take one down, pass it around,\n'
@@ -69,6 +75,23 @@ def main():
             pu_verse()
         else:
             last_verse()
+
+# --------------------------------------------------
+def test_verse():
+    """Test verse"""
+
+    last_verse = verse(1)
+    assert last_verse == '\n'.join([
+        '1 bottle of beer on the wall,', '1 bottle of beer,',
+        'Take one down, pass it around,',
+        'No more bottles of beer on the wall!'
+    ])
+
+    two_bottles = verse(2)
+    assert two_bottles == '\n'.join([
+        '2 bottles of beer on the wall,', '2 bottles of beer,',
+        'Take one down, pass it around,', '1 bottle of beer on the wall!'
+    ])
 
 
 # --------------------------------------------------
