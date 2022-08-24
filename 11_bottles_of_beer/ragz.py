@@ -45,26 +45,6 @@ def verse(bottle):
 
 
 # --------------------------------------------------
-def pu_verse():
-    """Sing the penultimate verse"""
-
-    print('2 bottles of beer on the wall,\n'
-          '2 bottles of beer,\n'
-          'Take one down, pass it around,\n'
-          '1 bottle of beer on the wall!\n')
-
-
-# --------------------------------------------------
-def last_verse():
-    """Sing the last verse"""
-
-    print('1 bottle of beer on the wall,\n'
-          '1 bottle of beer,\n'
-          'Take one down, pass it around,\n'
-          'No more bottles of beer on the wall!')
-
-
-# --------------------------------------------------
 def main():
     """Make a jazz noise here"""
 
