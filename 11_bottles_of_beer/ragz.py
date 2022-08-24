@@ -2,7 +2,7 @@
 """
 Author : parallels <parallels@fedora>
 Date   : 2022-08-22
-Purpose: Rock the Casbah
+Purpose: Sing 99 bottles of beer
 """
 
 import argparse
@@ -31,13 +31,17 @@ def get_args():
     return parser.parse_args()
 
 # --------------------------------------------------
-def verse(num):
+def verse(bottle):
     """Sing the verse"""
 
-    print(f'{num} bottles of beer on the wall,\n'
-          f'{num} bottles of beer,\n'
-          'Take one down, pass it around,\n'
-          f'{num - 1} more bottles of beer on the wall!\n\n')
+    next_bottle = bottle - 1
+    s1 = '' if bottle == 1 else 's'
+    s2 = '' if next_bottle == 1 else 's'
+    num_next = 'No more' if next_bottle == 0 else next_bottle
+    return '\n'.join([f'{bottle} bottle{s1} of beer on the wall,',
+          f'{bottle} bottle{s1} of beer,',
+          f'Take one down, pass it around,',
+          f'{num_next} bottle{s2} of beer on the wall!',])
 
 
 # --------------------------------------------------
@@ -67,14 +71,8 @@ def main():
     args = get_args()
     num = args.number
     num_bottles = list(range(num, 0, -1))
+    print('\n\n'.join(map(verse, range(num, 0, -1))))
 
-    for i in num_bottles:
-        if i > 2:
-            verse(i)
-        elif i == 2:
-            pu_verse()
-        else:
-            last_verse()
 
 # --------------------------------------------------
 def test_verse():
