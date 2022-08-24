@@ -35,13 +35,13 @@ def verse(bottle):
     """Sing the verse"""
 
     next_bottle = bottle - 1
-    s1 = '' if bottle == 1 else 's'
-    s2 = '' if next_bottle == 1 else 's'
+    plural_one = '' if bottle == 1 else 's'
+    plural_two = '' if next_bottle == 1 else 's'
     num_next = 'No more' if next_bottle == 0 else next_bottle
-    return '\n'.join([f'{bottle} bottle{s1} of beer on the wall,',
-          f'{bottle} bottle{s1} of beer,',
-          f'Take one down, pass it around,',
-          f'{num_next} bottle{s2} of beer on the wall!',])
+    return '\n'.join([f'{bottle} bottle{plural_one} of beer on the wall,',
+          f'{bottle} bottle{plural_one} of beer,',
+          'Take one down, pass it around,',
+          f'{num_next} bottle{plural_two} of beer on the wall!',])
 
 
 # --------------------------------------------------
@@ -50,7 +50,6 @@ def main():
 
     args = get_args()
     num = args.number
-    num_bottles = list(range(num, 0, -1))
     print('\n\n'.join(map(verse, range(num, 0, -1))))
 
 
